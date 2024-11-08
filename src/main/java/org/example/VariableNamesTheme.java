@@ -145,7 +145,7 @@ public class VariableNamesTheme {
         System.out.println("Имеются уникальные строки?: " + hasUniqueStrings);
 
         System.out.println("\n3. Аббревиатуры");
-        // Аббревиатуры
+
         String oldUuid = "123e4567-e89b-12d3-a456-426614174000";
         System.out.println("Старый universally unique identifier: " + oldUuid);
 
