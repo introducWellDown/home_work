@@ -120,5 +120,60 @@ public class IfElseStatementTheme {
         System.out.println("Сумма процентов: "+ totalSum.subtract(startSum));
 
         System.out.println("\n7. Определение оценки по предметам\n");
+
+        double histeryPointValue = 0.59;
+        double programmingPointValue = 0.92;
+
+        double histeryScore;
+        if (histeryPointValue <= 0.6) {
+            histeryScore = 2;
+        } else if (histeryPointValue > 0.6 && histeryPointValue <= 0.73) {
+            histeryScore = 3;
+        } else if (histeryPointValue > 0.73 && histeryPointValue <= 0.91) {
+            histeryScore = 4;
+        } else {
+            histeryScore = 5;
+        }
+
+        System.out.println("Оценка по истории: " + histeryScore);
+        System.out.println("% по истории: " + (histeryPointValue * 100) + "%");
+
+        double programmingScore;
+        if (programmingPointValue <= 0.6) {
+            programmingScore = 2;
+        } else if (programmingPointValue > 0.6 && programmingPointValue <= 0.73) {
+            programmingScore = 3;
+        } else if (programmingPointValue > 0.73 && programmingPointValue <= 0.91) {
+            programmingScore = 4;
+        } else {
+            programmingScore = 5;
+        }
+
+        System.out.println("Оценка по программированию: " + programmingScore);
+        System.out.println("% по программированию: " + (programmingPointValue * 100) + "%");
+
+        double mediumScore = (histeryScore + programmingScore) / 2;
+        double mediumpointValue = (histeryPointValue + programmingPointValue) / 2;
+
+        System.out.println("Оценка по среднему: " + mediumScore);
+        System.out.println("% по среднему: " + (mediumpointValue * 100) + "%");
+
+        System.out.println("\n8. Расчёт годовой прибыли\n");
+
+        BigDecimal monthlyIncome = new BigDecimal("13025.233");
+        BigDecimal rentCostPerMonth = new BigDecimal("5123.018");
+        BigDecimal createCostPerMonth = new BigDecimal("9001.729");
+
+        BigDecimal totalPayPerYear = (rentCostPerMonth.add(createCostPerMonth)).multiply(BigDecimal.valueOf(12));
+        BigDecimal revenuePerYear = monthlyIncome.subtract(totalPayPerYear);
+
+        if(revenuePerYear.compareTo(BigDecimal.ZERO) < 0){
+            System.out.println("Убыток за год: "  + revenuePerYear +" Руб");
+        }else if(revenuePerYear.compareTo(BigDecimal.ZERO) > 0){
+            System.out.println("Прибыль за год: " + revenuePerYear + " Руб" );
+        }
+
+
+
     }
 }
